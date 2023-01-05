@@ -16,7 +16,34 @@ const rockPaperScissors = (hand1, hand2) => {
 
   // Write code here
   // Use the unit test to see what is expected
-
+  // NOTE! I tried to use a switch case to *try* to make things more simple and clean, it didn't work. 
+  // Didn't seem like I could take two parameters into the switch case without causing problems.
+  let hand1Final = hand1.toLowerCase().trim();
+  let hand2Final = hand2.toLowerCase().trim();
+  let winner = '';
+  //tie cases
+  if (hand1Final==='rock' && hand2Final==='rock') {
+    return "It's a tie!";
+  }
+  else if (hand1Final==='paper' && hand2Final==='paper') {
+    return "It's a tie!";}
+  else if (hand1Final==='scissors' && hand2Final==='scissors') {
+    return "It's a tie!";} 
+  //hand one win cases
+  else if (hand1Final==='rock' && hand2Final==='scissors') {
+    return "Hand one wins!";}
+  else if (hand1Final==='paper' && hand2Final==='rock') {
+    return "Hand one wins!";}
+  else if (hand1Final==='scissors' && hand2Final==='paper') {
+    return "Hand one wins!";}
+  //hand two win cases
+  else if (hand1Final==='scissors' && hand2Final==='rock') {
+    return "Hand two wins!";}
+  else if (hand1Final==='rock' && hand2Final==='paper') {
+    return "Hand two wins!";}
+  else if (hand1Final==='paper' && hand2Final==='scissors') {
+    return "Hand two wins!";}
+  else {return "It's not working.";}
 }
 
 // the first function called in the program to get an input from the user
